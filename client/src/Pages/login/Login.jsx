@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './Login.scss';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         username: '',
         password: ''
@@ -20,9 +22,13 @@ const Login = () => {
     const submitForm = (event) => {
         // Prevent the default form submission behavior
         event.preventDefault();
-        alert(formData.username + " -: password :- " + formData.password)
         // Log the form data to the console
         console.log('Form Data:', formData);
+
+
+        // Using useNavigate to navigate to the '/home' route
+        navigate('/home');
+
     };
 
     const forgetPassword = () => {
@@ -48,7 +54,7 @@ const Login = () => {
                     <p className='forgetPassword' onClick={forgetPassword}>Forgot Password?</p>
 
                     <button type='submit'>Submit</button>
-                    <p className='goToSignUp'>Don't have an account? <span>signup</span> </p>
+                    <p className='goToSignUp'>Don't have an account? <span><Link to='/signup'>Signup</Link></span></p>
                 </form>
             </div>
         </div>

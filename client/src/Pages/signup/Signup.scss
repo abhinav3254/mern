@@ -1,0 +1,20 @@
+.card {
+    width: 30%;
+    margin: 5rem auto;
+
+    .form {
+
+        .goToLogIn {
+            text-decoration: underline;
+            text-align: center;
+
+            span {
+                color: yellow;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
