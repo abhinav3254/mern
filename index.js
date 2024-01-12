@@ -5,6 +5,13 @@ const port = 9000;
 const pool = require('./database/db');
 const runQuery = require('./database/query');
 
+// Import authentication routes
+const authenticationRoutes = require('./routes/authenticationRoutes');
+
+// Use the imported routes
+app.use('/auth', authenticationRoutes);
+
+
 app.get('/', (req, res) => {
     runQuery((err, data) => {
         if (err) {
