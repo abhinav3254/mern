@@ -3,7 +3,7 @@ const { Pool } = require('pg');
 const pool = new Pool({
     user: 'postgres',
     host: 'localhost',
-    database: 'book',
+    database: 'mern',
     password: 'root3254',
     port: '5432',
     // Maximum number of clients in the pool 
